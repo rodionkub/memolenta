@@ -1,6 +1,6 @@
 package Servlets;
 
-import Database.MainOfDB;
+import DAO.JoinDAO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -24,18 +24,18 @@ public class JoinServlet extends javax.servlet.http.HttpServlet {
         String login = req.getParameter("login");
         String email = req.getParameter("email");
         String pass = req.getParameter("pass");
-        String sex = req.getParameter("sex");
 
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
         try {
-            MainOfDB.addNewUser(login, pass, email, sex);
+            JoinDAO.addNewUser(login, pass, email);
             resp.setContentType("text/html");
             resp.setLocale(new Locale("ru"));
             PrintWriter writer = resp.getWriter();
             writer.print("Thanks for the registration, " + login + "!\n\nPlease, don't forget to confirm your email.");
         } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
             String error = e.toString();
             if (error.contains("users_email_uindex")) {
                 req.setAttribute("error", "email");

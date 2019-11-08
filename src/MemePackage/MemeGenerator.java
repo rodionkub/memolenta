@@ -1,3 +1,7 @@
+package MemePackage;
+
+import DAO.MemeDAO;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
@@ -6,16 +10,18 @@ import java.awt.font.TextLayout;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MemeGenerator {
-    public static void main(String[] args) throws Exception {
-        final BufferedImage image = ImageIO.read(new File("src/MemeTemplates/meme1.jpg"));
-
+    public static String generateMeme(File img, String upperText, String lowerText) throws IOException, SQLException, ClassNotFoundException {
+        final BufferedImage image = ImageIO.read(img);
+        int k = image.getWidth() / 18;
         Graphics g = image.getGraphics();
-        Font font = new Font("Lobster 1.4", Font.PLAIN, 30);
+        Font font = new Font("Lobster 1.4", Font.PLAIN, k);
         g.setFont(font);
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(
@@ -26,8 +32,6 @@ public class MemeGenerator {
                 RenderingHints.VALUE_RENDER_QUALITY);
         FontMetrics fontMetrics = g2d.getFontMetrics(font);
 
-        String upperText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque metus libero, pharetra eu sapien vel, porttitor facilisis orci.";
-        String lowerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque metus libero, pharetra eu sapien vel, porttitor facilisis orci.";
         int upperTextWidth = getLineWidth(fontMetrics, upperText);
         int lowerTextWidth = getLineWidth(fontMetrics, lowerText);
         int imageWidth = image.getWidth();
@@ -36,23 +40,24 @@ public class MemeGenerator {
         ArrayList<String> upperLines = getLines(upperTextWidth, imageWidth, upperText);
         ArrayList<String> lowerLines = getLines(lowerTextWidth, imageWidth, lowerText);
 
-        drawLines(upperLines, imageWidth, imageHeight, fontMetrics, g, true);
-        drawLines(lowerLines, imageWidth, imageHeight, fontMetrics, g, false);
+        drawLines(upperLines, imageWidth, imageHeight, fontMetrics, g, true, k);
+        drawLines(lowerLines, imageWidth, imageHeight, fontMetrics, g, false, k);
         g.dispose();
 
-        ImageIO.write(image, "png", new File("src/test.png"));
-        Runtime.getRuntime().exec("open src/test.png");
+        int number = MemeDAO.getMaxImgID() + 1;
+        ImageIO.write(image, "jpg", new File("/Users/rodionkub/Downloads/apache-tomcat-8.5.47/memolenta/memes/meme" + number + ".jpg"));
+        return "meme" + number + ".jpg";
     }
 
-    private static void drawLines(ArrayList<String> lines, int imageWidth, int imageHeight, FontMetrics fontMetrics, Graphics g, boolean upper) {
+    private static void drawLines(ArrayList<String> lines, int imageWidth, int imageHeight, FontMetrics fontMetrics, Graphics g, boolean upper, int k) {
         for (int i = 0; i < lines.size(); i++) {
             int x = imageWidth / 2 - getLineWidth(fontMetrics, lines.get(i)) / 2;
             int y;
             if (upper) {
-                y = imageHeight / 10 + i * 30;
+                y = imageHeight / 10 + i * k;
             }
             else {
-                y = imageHeight * 11 / 10  - (lines.size() - i + 1) * 30;
+                y = imageHeight  - (lines.size() - i) * k;
             }
             drawOutline(g, lines.get(i), x, y);
             g.drawString(lines.get(i), x, y);

@@ -1,12 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: rodionkub
-  Date: 05/11/2019
-  Time: 03:08
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -19,70 +13,74 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <body>
-<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="FileServlet?css=login.css">
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a href="#" class="navbar-brad"><img src="img/photo1.jpg"></a>
+        <a href="http://localhost:8080/main" class="navbar-brad"><img src="FileServlet?img=photo1.jpg" alt="sup bitch"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="main.html" class="nav-link">Главная</a>
+                <li class="nav-item active">
+                    <a href="http://localhost:8080/main" class="nav-link">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/join/join.jsp" class="nav-link">Зарегистрироваться</a>
+                    <a href="http://localhost:8080/newMeme" class="nav-link">Создать мем</a>
                 </li>
                 <li class="nav-item">
-                    <a href="login.jsp" class="nav-link active">Войти</a>
+                    <a href="http://localhost:8080/join" class="nav-link">Зарегистрироваться</a>
                 </li>
                 <li class="nav-item">
-                    <a href="aboutus.html" class="nav-link">О нас</a>
+                    <a href="http://localhost:8080/login" class="nav-link">Войти</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#5" class="nav-link">Выйти</a>
+                    <a href="http://localhost:8080/aboutus" class="nav-link">О нас</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 <form class="form-horizontal" action="http://localhost:8080/login" method="post">
-
-    <div class="form-group">
-        <div class="coll-sm-10" style="margin-left: 15px; margin-top: 10px">
-            <%if (request.getAttribute("error") != null) {%>Неверно введен логин или пароль. Повторите снова.<%}
-            else {%>Введите свои данные<%}%>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email или логин</label>
-        <div class="col-sm-10">
-            <input type="text" name="login" required class="form-control" id="inputEmail3"
-                   placeholder="Введите email или логин"
-                   value="<%
+    <div class="form-row">
+        <div class="col-md-4 mb-3 mx-3 my-3">
+            <label for="inputEmail3">Логин или почта</label>
+            <div class="input-group">
+                <input type="text" name="login" id="inputEmail3"
+                       placeholder="Логин или почта" aria-describedby="inputGroupPrepend3" required value="<%
     String login = request.getParameter("login");
-    if (login == null) {%><%}
-    else {
-        %><%=login%><%
-    }
-    %>">
+    if (login == null) {%>" class="form-control">
+                <%
+                } else {
+                %><%=login%>" class="form-control is-invalid">
+                <div class="invalid-feedback">
+                    Некорректный логин или почта
+                </div>
+                <%
+                    }
+                %>
+
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
-        <div class="col-sm-10">
-            <input type="password" name="pass" required class="form-control" id="inputPassword3"
-                   placeholder="Введите пароль"
-                   value="<%
+        <div class="form-group col-md-4 mb-3 mx-3 my-3">
+            <label for="inputPassword3" class=" control-label">Пароль</label>
+            <div class="input-group">
+                <input type="password" name="pass" id="inputPassword3"
+                       placeholder="Пароль" aria-describedby="inputGroupPrepend3" required value="<%
     String pass = request.getParameter("pass");
-    if (pass == null) {%><%}
-    else {
-        %><%=pass%><%
-    }
-    %>">
+    if (pass == null) {%>" class="form-control">
+                <%
+                } else {
+                %><%=pass%>" class="form-control is-invalid">
+                <div class="invalid-feedback">
+                    Некорректный пароль
+                </div>
+                <%
+                    }
+                %>
+            </div>
         </div>
+        <a href="password.html" class="btn btn-primary background white my-sm-5 mx-3">Забыли пароль?</a>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
@@ -95,7 +93,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Войти</button>
+            <button type="submit" class="btn btn-primary background white">Войти</button>
         </div>
     </div>
 </form>

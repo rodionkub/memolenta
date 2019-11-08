@@ -14,6 +14,63 @@
         <servlet-class>Servlets.LoginServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <servlet-class>Servlets.MainServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>profile</servlet-name>
+        <servlet-class>Servlets.ProfileServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>newMeme</servlet-name>
+        <servlet-class>Servlets.MemeServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>Servlets.LogoutServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>
+            logout
+        </servlet-name>
+        <url-pattern>
+            /logout
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>
+            newMeme
+        </servlet-name>
+        <url-pattern>
+            /newMeme
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>
+            main
+        </servlet-name>
+        <url-pattern>
+            /main
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>
+            profile
+        </servlet-name>
+        <url-pattern>
+            /profile
+        </url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>
             join
@@ -31,6 +88,4 @@
             /login
         </url-pattern>
     </servlet-mapping>
-
-
 </web-app>

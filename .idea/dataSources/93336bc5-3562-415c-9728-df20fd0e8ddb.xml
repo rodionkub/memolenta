@@ -7,7 +7,7 @@
     <database id="2" parent="1" name="memolenta_db">
       <ObjectId>24600</ObjectId>
       <Owner>rodionkub</Owner>
-      <IntrospectionStateNumber>698</IntrospectionStateNumber>
+      <IntrospectionStateNumber>751</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|24613|24615|1
 sequence|table|24624|24607|1
@@ -97,7 +97,7 @@ sequence|table|24624|24607|1
       <Comment>standard public schema</Comment>
       <StateNumber>359</StateNumber>
       <Owner>rodionkub</Owner>
-      <IntrospectionStateNumber>699</IntrospectionStateNumber>
+      <IntrospectionStateNumber>752</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="18" parent="2" name="btree">
@@ -175,12 +175,12 @@ sequence|table|24624|24607|1
     <table id="27" parent="17" name="posts">
       <ObjectId>24615</ObjectId>
       <Owner>rodionkub</Owner>
-      <StateNumber>670</StateNumber>
+      <StateNumber>739</StateNumber>
     </table>
     <table id="28" parent="17" name="users">
       <ObjectId>24607</ObjectId>
       <Owner>rodionkub</Owner>
-      <StateNumber>681</StateNumber>
+      <StateNumber>750</StateNumber>
     </table>
     <column id="29" parent="27" name="id">
       <Position>1</Position>
@@ -190,51 +190,46 @@ sequence|table|24624|24607|1
       <DefaultExpression>nextval(&apos;post_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="30" parent="27" name="owner_id">
+    <column id="30" parent="27" name="owner_login">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>601</StateNumber>
-      <TypeId>23</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>739</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="31" parent="27" name="rating">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>601</StateNumber>
+      <StateNumber>733</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="32" parent="27" name="head">
-      <Position>4</Position>
-      <DataType>varchar|0s</DataType>
-      <StateNumber>601</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="33" parent="27" name="pic_link">
+    <column id="32" parent="27" name="pic_link">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>601</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="34" parent="27" name="date">
+    <column id="33" parent="27" name="date">
       <Position>6</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>670</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="35" parent="27" name="post_pk">
+    <index id="34" parent="27" name="post_pk">
       <ObjectId>24622</ObjectId>
-      <StateNumber>601</StateNumber>
+      <StateNumber>739</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="36" parent="27" name="post_pk">
+    <key id="35" parent="27" name="post_pk">
       <ObjectId>24623</ObjectId>
       <StateNumber>601</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>post_pk</UnderlyingIndexName>
     </key>
-    <column id="37" parent="28" name="id">
+    <column id="36" parent="28" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -242,80 +237,75 @@ sequence|table|24624|24607|1
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="38" parent="28" name="login">
+    <column id="37" parent="28" name="login">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>678</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="39" parent="28" name="password">
+    <column id="38" parent="28" name="password">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>598</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="40" parent="28" name="email">
+    <column id="39" parent="28" name="email">
       <Position>4</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>598</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="41" parent="28" name="ava_link">
+    <column id="40" parent="28" name="ava_link">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>598</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="42" parent="28" name="post_ids">
+    <column id="41" parent="28" name="pic_links">
       <Position>6</Position>
-      <DataType>integer[]|0s</DataType>
-      <StateNumber>598</StateNumber>
-      <TypeId>1007</TypeId>
+      <DataType>text[]|0s</DataType>
+      <StateNumber>746</StateNumber>
+      <TypeId>1009</TypeId>
     </column>
-    <column id="43" parent="28" name="liked_ids">
+    <column id="42" parent="28" name="liked_links">
       <Position>7</Position>
-      <DataType>integer[]|0s</DataType>
-      <StateNumber>598</StateNumber>
-      <TypeId>1007</TypeId>
+      <DataType>text[]|0s</DataType>
+      <StateNumber>748</StateNumber>
+      <TypeId>1009</TypeId>
     </column>
-    <column id="44" parent="28" name="subscriptions_ids">
+    <column id="43" parent="28" name="subscriptions_logins">
       <Position>8</Position>
-      <DataType>integer[]|0s</DataType>
-      <StateNumber>598</StateNumber>
-      <TypeId>1007</TypeId>
+      <DataType>text[]|0s</DataType>
+      <StateNumber>750</StateNumber>
+      <TypeId>1009</TypeId>
     </column>
-    <column id="45" parent="28" name="subscribers_count">
+    <column id="44" parent="28" name="subscribers_count">
       <Position>9</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>598</StateNumber>
+      <StateNumber>720</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="46" parent="28" name="sex">
-      <Position>11</Position>
-      <DataType>text|0s</DataType>
-      <StateNumber>681</StateNumber>
-      <TypeId>25</TypeId>
-    </column>
-    <index id="47" parent="28" name="users_pk">
+    <index id="45" parent="28" name="users_pk">
       <ObjectId>24627</ObjectId>
-      <StateNumber>607</StateNumber>
+      <StateNumber>750</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="48" parent="28" name="users_login_uindex">
+    <index id="46" parent="28" name="users_login_uindex">
       <ObjectId>24637</ObjectId>
-      <StateNumber>697</StateNumber>
+      <StateNumber>750</StateNumber>
       <ColNames>login</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="49" parent="28" name="users_email_uindex">
+    <index id="47" parent="28" name="users_email_uindex">
       <ObjectId>24635</ObjectId>
-      <StateNumber>691</StateNumber>
+      <StateNumber>750</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="50" parent="28" name="users_pk">
+    <key id="48" parent="28" name="users_pk">
       <ObjectId>24628</ObjectId>
       <StateNumber>607</StateNumber>
       <ColNames>id</ColNames>

@@ -1,8 +1,11 @@
 package Servlets;
 
+import DAO.LoginDAO;
 import Database.MainOfDB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -10,6 +13,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Locale;
 
+@WebServlet("/LoginServlet")
 public class LoginServlet extends javax.servlet.http.HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,10 +32,11 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         try {
-            if (MainOfDB.correctPassword(login, pass)) {
+            if (LoginDAO.correctPassword(login, pass)) {
                 resp.setContentType("text/html");
-                PrintWriter writer = resp.getWriter();
-                writer.print("Привет, " + login + "! Рады тебя видеть :)");
+                Cookie cookie = new Cookie("login", login);
+                resp.addCookie(cookie);
+                resp.sendRedirect("profile");
             }
             else {
                 RequestDispatcher rd = req.getRequestDispatcher("/login/login.jsp");
