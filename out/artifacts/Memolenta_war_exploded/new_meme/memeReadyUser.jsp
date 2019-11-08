@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="FileServlet?css=memReady.css">
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a href="#" class="navbar-brad"><img src="FileServlet?img=photo1.jpg" alt="hey dog"></a>
+        <a href="http://localhost:8080/main" class="navbar-brad"><img src="FileServlet?img=photo1.jpg" alt="hey dog"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,7 +41,7 @@
                     <a href="http://localhost:8080/logout" class="nav-link">Выход</a>
                 </li>
                 <li class="nav-item">
-                    <a href="aboutUsForUser.html" class="nav-link">О нас</a>
+                    <a href="http://localhost:8080/aboutus" class="nav-link">О нас</a>
                 </li>
             </ul>
         </div>

@@ -22,14 +22,18 @@ public class ProfileServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
-        String login;
-        if (req.getParameter("login") != null) {
-            login = req.getParameter("login");
+        boolean logged = false;
+        String login = null;
+        for (Cookie ck : req.getCookies()) {
+            if (ck.getName().equals("login")) {
+                login = ck.getValue();
+                logged = true;
+            }
         }
-        else {
-            Cookie[] cookie = req.getCookies();
-            System.out.println(Arrays.toString(cookie));
-            login = cookie[0].getValue();
+        if (!logged) {
+            RequestDispatcher rd = req.getRequestDispatcher("login");
+            rd.include(req, resp);
+            return;
         }
         HashMap<String, String> data = null;
         try {

@@ -22,7 +22,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a href="http://localhost:8080/main" class="nav-link">Главная</a>
                 </li>
                 <li class="nav-item">
@@ -31,7 +31,7 @@
                 <li class="nav-item">
                     <a href="http://localhost:8080/join" class="nav-link">Зарегистрироваться</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="http://localhost:8080/login" class="nav-link">Войти</a>
                 </li>
                 <li class="nav-item">
