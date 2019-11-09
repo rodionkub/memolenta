@@ -7,8 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="242a0b6b-3598-4eb4-bee0-d06fa1f6da46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DAO/SecurityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Servlets/AboutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Servlets/LikedMemesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Servlets/MyMemesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Servlets/SecurityServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/aboutus/aboutUsForUser.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/aboutus/aboutus.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/profile/likedMemes.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/profile/myMemes.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/profile/security.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/93336bc5-3562-415c-9728-df20fd0e8ddb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/93336bc5-3562-415c-9728-df20fd0e8ddb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/93336bc5-3562-415c-9728-df20fd0e8ddb/storage_v2/_src_/database/memolenta_db.1c3oxQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/93336bc5-3562-415c-9728-df20fd0e8ddb/storage_v2/_src_/database/memolenta_db.1c3oxQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/DAO/MemeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/DAO/MemeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/JoinServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/JoinServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/MainServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/ProfileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/join/join.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/join/join.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/login/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/main/main.jsp" afterDir="false" />
@@ -20,17 +40,23 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/new_meme/memeText.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/new_meme/memeText.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/new_meme/memeTextUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/new_meme/memeTextUser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/profile/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/profile/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memolenta/DAO/MemeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/DAO/MemeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memolenta/Servlets/JoinServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/Servlets/JoinServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memolenta/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/Servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memolenta/Servlets/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/Servlets/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memolenta/Servlets/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/Servlets/MainServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memolenta/Servlets/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/Servlets/ProfileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/MemeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/MemeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlets/JoinServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/JoinServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlets/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/MainServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Servlets/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/ProfileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/join/join.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/join/join.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/main/main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/main/mainForUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/main/mainForUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/new_meme/createMeme.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/new_meme/createMeme.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/new_meme/createMemeUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/new_meme/createMemeUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/new_meme/memeReady.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/new_meme/memeReady.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/new_meme/memeReadyUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/new_meme/memeReadyUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/new_meme/memeText.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/new_meme/memeText.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/new_meme/memeTextUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/new_meme/memeTextUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/profile/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/profile/profile.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +164,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/new_meme" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/aboutus" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -151,25 +177,25 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/new_meme" />
-      <recent name="$PROJECT_DIR$/web/main" />
-      <recent name="$PROJECT_DIR$/web/profile" />
-      <recent name="$PROJECT_DIR$/web/css" />
-      <recent name="$PROJECT_DIR$/web" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/web/WebContent" />
       <recent name="$PROJECT_DIR$/web/WEB-INF" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
       <recent name="$PROJECT_DIR$/web/login" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/aboutus" />
+      <recent name="$PROJECT_DIR$/web/profile" />
+      <recent name="$PROJECT_DIR$/web/new_meme" />
+      <recent name="$PROJECT_DIR$/web/main" />
+      <recent name="$PROJECT_DIR$/web/css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -364,7 +390,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@88d18055" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f377945b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -392,7 +418,7 @@
       <workItem from="1573083432516" duration="15028000" />
       <workItem from="1573170524317" duration="14772000" />
       <workItem from="1573186341099" duration="151000" />
-      <workItem from="1573255508695" duration="557000" />
+      <workItem from="1573255508695" duration="10538000" />
     </task>
     <servers />
   </component>

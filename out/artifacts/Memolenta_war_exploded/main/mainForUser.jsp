@@ -2,6 +2,7 @@
 <%@ page import="DAO.MemeDAO" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.HashMap" %>
+<%@ page import="Servlets.MainServlet" %>
 <!doctype html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("UTF-8");%>
@@ -10,7 +11,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>Мемолента</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -31,13 +32,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="http://localhost:8080/main" class="nav-link">Главная</a>
                 </li>
                 <li class="nav-item">
                     <a href="http://localhost:8080/newMeme" class="nav-link">Создать мем</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a href="http://localhost:8080/profile" class="nav-link">Моя страница</a>
                 </li>
                 <li class="nav-item">
@@ -75,31 +76,43 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
-        <%
-            try {
-                ArrayList<String> links = MemeDAO.getPostsArray();
-                for (String link : links) {
-                    HashMap<String, String> data = MemeDAO.getPostInfo(link);
-                    %>
-        <div class="card mb-3">
-            <div class="card-header">
-                <a href="myMemes.html" class="btn btn-link text-dark"><%=data.get("owner_login")%></a>
-            </div>
-            <img src="FileServlet?meme=<%=link%>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <button type="button" class="btn btn-outline-dark">Dislike</button>
-                <button type="button" class="btn btn-outline-dark" disabled><%=data.get("rating")%></button>
-                <button type="button" class="btn btn-outline-dark">Like</button>
-                <p class="card-text"><small class="text-muted"><%=data.get("date")%></small></p>
-            </div>
-        </div><%
+        <div class="col-sm-6">
+            <%
+                String login = null;
+                for (Cookie ck : request.getCookies()) {
+                    if (ck.getName().equals("login")) {
+                        login = ck.getValue();
+                    }
                 }
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        %>
-    </div>
+
+                try {
+                    ArrayList<String> links = MemeDAO.getPostsArray();
+                    for (String link : links) {
+                        HashMap<String, String> data = MemeDAO.getPostInfo(link);
+                        %>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <a href="http://localhost:8080/profile?login=<%=data.get("owner_login")%>" class="btn btn-link text-dark"><%=data.get("owner_login")%></a>
+                </div>
+                <img src="FileServlet?meme=<%=link%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <form action="http://localhost:8080/main" method="post" style="margin-right: 55%">
+                        <button type="submit" name="dislike" value="<%=login%>;<%=link%>" class="btn btn-outline-dark">Dislike</button>
+                        <button type="button" class="btn btn-outline-dark" disabled><%=data.get("rating")%></button>
+                        <button type="submit" name="like" value="<%=login%>;<%=link%>" class="btn btn-outline-dark">Like</button>
+                    </form>
+                    <p class="card-text"><small class="text-muted"><%=data.get("date")%></small></p>
+                </div>
+            </div><%
+                    }
+                } catch (SQLException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            %>
+
+        </div>
+
+
     <div class="col-sm">
         <div class="d7 mx-4 my-2">
             <form>

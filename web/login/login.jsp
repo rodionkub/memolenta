@@ -80,13 +80,15 @@
                 %>
             </div>
         </div>
+        <!---
         <a href="password.html" class="btn btn-primary background white my-sm-5 mx-3">Забыли пароль?</a>
+        --->
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox"> Запомнить меня
+                    <input type="checkbox" name="remember_me"> Запомнить меня
                 </label>
             </div>
         </div>

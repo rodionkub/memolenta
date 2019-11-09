@@ -39,4 +39,29 @@ public class MainServlet extends HttpServlet {
             rd.include(req, resp);
         }
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
+        String login;
+        String pic_link;
+        try {
+            if (req.getParameter("like") != null) {
+                String value = req.getParameter("like");
+                login = value.split(";")[0];
+                pic_link = value.split(";")[1];
+                MemeDAO.changeRating(true, pic_link, login);
+            } else if (req.getParameter("dislike") != null) {
+                String value = req.getParameter("dislike");
+                login = value.split(";")[0];
+                pic_link = value.split(";")[1];
+                MemeDAO.changeRating(false, pic_link, login);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        resp.sendRedirect("http://localhost:8080/main");
+    }
 }

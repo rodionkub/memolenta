@@ -34,6 +34,62 @@
         <servlet-class>Servlets.LogoutServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>myMemes</servlet-name>
+        <servlet-class>Servlets.MyMemesServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>likedMemes</servlet-name>
+        <servlet-class>Servlets.LikedMemesServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>security</servlet-name>
+        <servlet-class>Servlets.SecurityServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>aboutus</servlet-name>
+        <servlet-class>Servlets.AboutServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>
+            aboutus
+        </servlet-name>
+        <url-pattern>
+            /aboutus
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>
+            security
+        </servlet-name>
+        <url-pattern>
+            /security
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>
+            likedMemes
+        </servlet-name>
+        <url-pattern>
+            /likedMemes
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>
+            myMemes
+        </servlet-name>
+        <url-pattern>
+            /myMemes
+        </url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>

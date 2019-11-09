@@ -10,7 +10,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>Мемолента</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -84,7 +84,7 @@
         %>
         <div class="card mb-3">
             <div class="card-header">
-                <a href="myMemes.html" class="btn btn-link text-dark"><%=data.get("owner_login")%></a>
+                <a href="http://localhost:8080/profile?login=<%=data.get("owner_login")%>" class="btn btn-link text-dark"><%=data.get("owner_login")%></a>
             </div>
             <img src="FileServlet?meme=<%=link%>" class="card-img-top" alt="...">
             <div class="card-body">

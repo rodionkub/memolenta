@@ -3,6 +3,7 @@ package Servlets;
 import DAO.JoinDAO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -30,10 +31,9 @@ public class JoinServlet extends javax.servlet.http.HttpServlet {
 
         try {
             JoinDAO.addNewUser(login, pass, email);
-            resp.setContentType("text/html");
-            resp.setLocale(new Locale("ru"));
-            PrintWriter writer = resp.getWriter();
-            writer.print("Thanks for the registration, " + login + "!\n\nPlease, don't forget to confirm your email.");
+            Cookie cookie = new Cookie("login", login);
+            resp.addCookie(cookie);
+            resp.sendRedirect("profile");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             String error = e.toString();

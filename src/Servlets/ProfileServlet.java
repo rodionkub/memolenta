@@ -22,6 +22,8 @@ public class ProfileServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
+        HashMap<String, String> data = null;
+
         boolean logged = false;
         String login = null;
         for (Cookie ck : req.getCookies()) {
@@ -30,12 +32,14 @@ public class ProfileServlet extends HttpServlet {
                 logged = true;
             }
         }
+        if (req.getParameter("login") != null) {
+            logged = true;
+            login = req.getParameter("login");
+        }
         if (!logged) {
-            RequestDispatcher rd = req.getRequestDispatcher("login");
-            rd.include(req, resp);
+            resp.sendRedirect("http://localhost:8080/login");
             return;
         }
-        HashMap<String, String> data = null;
         try {
             data = ProfileDAO.getData(login);
         } catch (SQLException | ClassNotFoundException e) {
@@ -50,7 +54,6 @@ public class ProfileServlet extends HttpServlet {
             if (subscriptions_count == null) {
                 subscriptions_count = "0";
             }
-            System.out.println("sc " + subscriptions_count);
             req.setAttribute("email", data.get("email"));
             req.setAttribute("subscribers_count", data.get("subscribers_count"));
             req.setAttribute("login", login);

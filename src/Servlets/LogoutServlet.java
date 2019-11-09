@@ -15,7 +15,6 @@ public class LogoutServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         for (Cookie ck : req.getCookies()) {
-            System.out.println(ck.getName());
             if (ck.getName().equals("login")) {
                 ck.setMaxAge(0);
                 resp.addCookie(ck);

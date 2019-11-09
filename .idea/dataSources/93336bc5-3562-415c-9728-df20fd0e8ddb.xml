@@ -7,7 +7,7 @@
     <database id="2" parent="1" name="memolenta_db">
       <ObjectId>24600</ObjectId>
       <Owner>rodionkub</Owner>
-      <IntrospectionStateNumber>751</IntrospectionStateNumber>
+      <IntrospectionStateNumber>817</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|24613|24615|1
 sequence|table|24624|24607|1
@@ -97,7 +97,7 @@ sequence|table|24624|24607|1
       <Comment>standard public schema</Comment>
       <StateNumber>359</StateNumber>
       <Owner>rodionkub</Owner>
-      <IntrospectionStateNumber>752</IntrospectionStateNumber>
+      <IntrospectionStateNumber>818</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="18" parent="2" name="btree">
@@ -305,7 +305,13 @@ sequence|table|24624|24607|1
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="48" parent="28" name="users_pk">
+    <index id="48" parent="28" name="users_liked_links_uindex">
+      <ObjectId>24674</ObjectId>
+      <StateNumber>816</StateNumber>
+      <ColNames>liked_links</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="28" name="users_pk">
       <ObjectId>24628</ObjectId>
       <StateNumber>607</StateNumber>
       <ColNames>id</ColNames>

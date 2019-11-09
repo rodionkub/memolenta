@@ -22,7 +22,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a href="http://localhost:8080/main" class="nav-link">Главная</a>
                 </li>
                 <li class="nav-item">
@@ -31,7 +31,7 @@
                 <li class="nav-item">
                     <a href="http://localhost:8080/join" class="nav-link">Зарегистрироваться</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="http://localhost:8080/login" class="nav-link">Войти</a>
                 </li>
                 <li class="nav-item">
@@ -80,13 +80,15 @@
                 %>
             </div>
         </div>
+        <!---
         <a href="password.html" class="btn btn-primary background white my-sm-5 mx-3">Забыли пароль?</a>
+        --->
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox"> Запомнить меня
+                    <input type="checkbox" name="remember_me"> Запомнить меня
                 </label>
             </div>
         </div>

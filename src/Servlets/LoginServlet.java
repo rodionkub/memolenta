@@ -35,6 +35,9 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
             if (LoginDAO.correctPassword(login, pass)) {
                 resp.setContentType("text/html");
                 Cookie cookie = new Cookie("login", login);
+                if (req.getParameter("remember_me") == null) {
+                    cookie.setMaxAge(86400);
+                }
                 resp.addCookie(cookie);
                 resp.sendRedirect("profile");
             }

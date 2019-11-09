@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/src/DAO/LoginDAO.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/DAO/MemeDAO.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/DAO/ProfileDAO.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/DAO/SecurityDAO.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/Database/MainOfDB.java" dialect="PostgreSQL" />
+    <file url="PROJECT" dialect="PostgreSQL" />
   </component>
 </project>
