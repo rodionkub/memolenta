@@ -24,6 +24,10 @@ public class MainServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        if (req.getParameter("top") != null) {
+            String setting = req.getParameter("top");
+            System.out.println(setting);
+        }
         RequestDispatcher rd;
         boolean flag = false;
         for (Cookie ck : req.getCookies()) {
@@ -62,6 +66,16 @@ public class MainServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException | InterruptedException e) {
             e.printStackTrace();
         }
-        resp.sendRedirect("http://localhost:8080/main");
+        if (req.getParameter("redirect") != null) {
+            if (req.getParameter("redirect").equals("likedMemes")) {
+                resp.sendRedirect("http://localhost:8080/likedMemes");
+            }
+            if (req.getParameter("redirect").equals("myMemes")) {
+                resp.sendRedirect("http://localhost:8080/myMemes");
+            }
+        }
+        else {
+            resp.sendRedirect("http://localhost:8080/main");
+        }
     }
 }

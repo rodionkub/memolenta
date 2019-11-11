@@ -59,7 +59,7 @@
                     Топ
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="#">За день</a>
+                    <a class="dropdown-item" href="http://localhost:8080/main?top=day">За день</a>
                     <a class="dropdown-item" href="#">За неделю</a>
                     <a class="dropdown-item" href="#">За месяц</a>
                     <a class="dropdown-item" href="#">За всё время</a>

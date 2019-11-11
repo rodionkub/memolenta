@@ -26,7 +26,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <%if (request.getParameter("login") == null) {%>
+                <%if (request.getAttribute("login") != null) {%>
                 <li class="nav-item">
                     <a href="http://localhost:8080/main" class="nav-link">Главная</a>
                 </li>

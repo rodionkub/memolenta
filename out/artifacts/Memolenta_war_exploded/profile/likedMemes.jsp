@@ -100,9 +100,11 @@
             </div>
             <img src="FileServlet?meme=<%=link%>" class="card-img-top" alt="...">
             <div class="card-body">
-                <button type="button" class="btn btn-outline-dark">Dislike</button>
-                <button type="button" class="btn btn-outline-dark" disabled><%=data.get("rating")%></button>
-                <button type="button" class="btn btn-outline-dark">Like</button>
+                <form action="http://localhost:8080/main?redirect=likedMemes" method="post" style="margin-right: 55%">
+                    <button type="submit" name="dislike" value="<%=login%>;<%=link%>" class="btn btn-outline-dark">Dislike</button>
+                    <button type="button" class="btn btn-outline-dark" disabled><%=data.get("rating")%></button>
+                    <button type="submit" name="like" value="<%=login%>;<%=link%>" class="btn btn-outline-dark">Like</button>
+                </form>
                 <p class="card-text"><small class="text-muted"><%=data.get("date")%></small></p>
             </div>
         </div><%

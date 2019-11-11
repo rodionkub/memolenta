@@ -27,23 +27,20 @@ public class ProfileServlet extends HttpServlet {
         HashMap<String, String> data = null;
 
         boolean logged = false;
+        String cookieLogin = null;
         String login = null;
         for (Cookie ck : req.getCookies()) {
             if (ck.getName().equals("login")) {
-                login = ck.getValue();
+                cookieLogin = ck.getValue();
                 logged = true;
             }
-        }
-        if (req.getParameter("login") != null) {
-            logged = true;
-            login = req.getParameter("login");
         }
         if (!logged) {
             resp.sendRedirect("http://localhost:8080/login");
             return;
         }
         try {
-            data = ProfileDAO.getData(login);
+            data = ProfileDAO.getData(cookieLogin);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -58,7 +55,7 @@ public class ProfileServlet extends HttpServlet {
             }
             req.setAttribute("email", data.get("email"));
             req.setAttribute("subscribers_count", data.get("subscribers_count"));
-            req.setAttribute("login", login);
+            req.setAttribute("login", cookieLogin);
             req.setAttribute("posts_count", posts_count);
             req.setAttribute("subscriptions_count", subscriptions_count);
         }
