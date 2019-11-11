@@ -8,18 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="242a0b6b-3598-4eb4-bee0-d06fa1f6da46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/MainServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/WEB-INF/classes/Servlets/ProfileServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/main/mainForUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/main/mainForUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/profile/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Memolenta_war_exploded/profile/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memolenta/Servlets/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/Servlets/MainServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memolenta/Servlets/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memolenta/Servlets/ProfileServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlets/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/MainServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlets/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/ProfileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/main/mainForUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/main/mainForUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/profile/likedMemes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/profile/likedMemes.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/profile/myMemes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/profile/myMemes.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/profile/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/profile/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlets/JoinServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/JoinServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -385,7 +374,7 @@
       <workItem from="1573293860497" duration="32000" />
       <workItem from="1573320223671" duration="224000" />
       <workItem from="1573428084626" duration="6087000" />
-      <workItem from="1573435285978" duration="586000" />
+      <workItem from="1573435285978" duration="2128000" />
     </task>
     <servers />
   </component>

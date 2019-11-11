@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class JoinServlet extends javax.servlet.http.HttpServlet {
     @Override
@@ -31,10 +33,16 @@ public class JoinServlet extends javax.servlet.http.HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         try {
-            JoinDAO.addNewUser(login, pass, email);
-            Cookie cookie = new Cookie("login", login);
-            resp.addCookie(cookie);
-            resp.sendRedirect("profile");
+            Pattern loginPattern = Pattern.compile("[A-z\\d]*");
+            Pattern passPattern = Pattern.compile("[A-z\\d-_!]*");
+            Matcher loginMatcher = loginPattern.matcher(login);
+            Matcher passMatcher = passPattern.matcher(pass);
+            if (loginMatcher.matches() && passMatcher.matches()) {
+                JoinDAO.addNewUser(login, pass, email);
+                Cookie cookie = new Cookie("login", login);
+                resp.addCookie(cookie);
+                resp.sendRedirect("profile");
+            }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             String error = e.toString();
@@ -47,6 +55,9 @@ public class JoinServlet extends javax.servlet.http.HttpServlet {
             RequestDispatcher rd = req.getRequestDispatcher("/join/join.jsp");
             rd.include(req, resp);
         }
-
+        req.setAttribute("error", "email");
+        req.setAttribute("error", "login");
+        RequestDispatcher rd = req.getRequestDispatcher("/join/join.jsp");
+        rd.include(req, resp);
     }
 }
