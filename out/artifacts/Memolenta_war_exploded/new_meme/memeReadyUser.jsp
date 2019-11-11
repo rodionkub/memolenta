@@ -22,7 +22,8 @@
 <link rel="stylesheet" href="FileServlet?css=memReady.css">
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a href="http://localhost:8080/main" class="navbar-brad"><img src="FileServlet?img=photo1.jpg" alt="hey dog"></a>
+        <a href="http://localhost:8080/main" class="navbar-brad"><img src="FileServlet?img=photo1.jpg"
+                                                                      alt="hey dog"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,9 +54,18 @@
     </div>
     <img src="FileServlet?meme=<%=request.getAttribute("meme")%>" class="card-img-top" alt="...">
     <div class="card-body">
-        <form action="<%try {
-MemeDAO.newPost(request.getCookies()[0].getValue(), request.getAttribute("meme").toString(), new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));} catch (SQLException | ClassNotFoundException e) {
+        <form action="<%
+        String login = null;
+        for (Cookie ck : request.getCookies()) {
+            if (ck.getName().equals("login")) {
+                login = ck.getValue();
+            }
+        }
+        if (login != null) {
+        try {
+MemeDAO.newPost(login, request.getAttribute("meme").toString(), new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));} catch (SQLException | ClassNotFoundException e) {
     e.printStackTrace();
+}
 }%>http://localhost:8080/profile" method="get">
             <button type="submit" class="btn btn-primary background white mx-3">Скачать и сохранить</button>
             <button type="submit" class="btn btn-primary background white mx-3">Сохранить</button>

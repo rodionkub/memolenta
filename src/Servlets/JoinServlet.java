@@ -25,6 +25,7 @@ public class JoinServlet extends javax.servlet.http.HttpServlet {
         String login = req.getParameter("login");
         String email = req.getParameter("email");
         String pass = req.getParameter("pass");
+        System.out.println(req.getParameter("avatar"));
 
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");

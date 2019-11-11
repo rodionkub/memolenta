@@ -59,7 +59,7 @@ public class MainServlet extends HttpServlet {
                 pic_link = value.split(";")[1];
                 MemeDAO.changeRating(false, pic_link, login);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | InterruptedException e) {
             e.printStackTrace();
         }
         resp.sendRedirect("http://localhost:8080/main");

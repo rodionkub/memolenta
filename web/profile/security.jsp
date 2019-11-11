@@ -66,7 +66,7 @@
                     <div class="link_title">
                         <a href="http://localhost:8080/security"><span>Безопасность</span></a></div>
                 </li>
-                <li class="var_nav">
+                <!---<li class="var_nav">
                     <div class="link_bg"></div>
                     <div class="link_title">
                         <a href="http://localhost:8080/subscriptions"><span>Подписки</span></a></div>
@@ -74,7 +74,7 @@
                 <li class="var_nav">
                     <div class="link_bg"></div>
                     <div class="link_title">
-                        <a href="http://localhost:8080/subscribers"><span>Подписчики</span></a></div>
+                        <a href="http://localhost:8080/subscribers"><span>Подписчики</span></a></div>--->
                 </li>
             </ul>
         </nav>

@@ -90,7 +90,7 @@
                             <div class="link_title">
                                 <a href="http://localhost:8080/security"><span>Безопасность</span></a></div>
                         </li>
-                        <li class="var_nav">
+                        <!---<li class="var_nav">
                             <div class="link_bg"></div>
                             <div class="link_title">
                                 <a href="http://localhost:8080/subscriptions"><span>Подписки</span></a></div>
@@ -99,23 +99,26 @@
                             <div class="link_bg"></div>
                             <div class="link_title">
                                 <a href="http://localhost:8080/subscribers"><span>Подписчики</span></a></div>
-                        </li>
+                        </li>--->
                     </ul>
                 </nav>
             </div>
             <%}%>
             <div class="col-sm">
                 <div class="card bg-transparent" style="width: 14rem;">
-                    <img src="FileServlet?img=Rodia3.jpg" class="card-img-top" alt="...">
+                    <img src="FileServlet?img=<%=request.getAttribute("login") + "_ava.png"%>" class="card-img-top" alt="...">
                     <%if (request.getParameter("login") == null) {%>
                     <div class="card-body">
                         <div class="text-center">
-                            <a href="#" class="btn btn-primary background grey">Изменить</a>
+                            <form action="http://localhost:8080/profile" method="post" enctype="multipart/form-data">
+                                <input width="100px" name="avatar" type="file" class="form-control form-control-sm">
+                                <button class="btn" type="submit" style="background-color: deepskyblue; height: 30px; margin-top: 5px">Применить</button>
+                            </form>
                         </div>
                     </div>
                     <%}%>
                 </div>
-                <div class="row">
+                <!---<div class="row">
                     <div class="username">
                         <div class="col-auto my-3">
                             <h5>Подписчики</h5>
@@ -132,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--->
             </div>
         </div>
     </div>

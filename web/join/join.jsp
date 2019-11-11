@@ -95,10 +95,6 @@
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="exampleInputFile">Добавить фотографию</label>
-        <input type="file" id="exampleInputFile">
-    </div>
     <button type="submit" class="btn btn-primary background white my-sm-4 mx-3">Зарегистрироваться</button>
 </form>
 </body>

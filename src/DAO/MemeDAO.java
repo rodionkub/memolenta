@@ -4,9 +4,7 @@ import Database.MainOfDB;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class MemeDAO {
     private static MainOfDB db = new MainOfDB();
@@ -80,13 +78,41 @@ public class MemeDAO {
         return data;
     }
 
-    public static void changeRating(boolean like, String pic_link, String login) throws SQLException, ClassNotFoundException {
+    public static void changeRating(boolean like, String pic_link, String login) throws SQLException, ClassNotFoundException, InterruptedException {
         if (like) {
-            db.accessDB().executeUpdate("update users set liked_links = array_cat(liked_links, '{" + pic_link +"}') where login='" + login + "';");
-            db.accessDB().executeUpdate("update posts set rating = rating + 1 where pic_link = '" + pic_link + "';");
+            ResultSet rs = db.accessDB().executeQuery("select liked_links from users where login='" + login + "';");
+            if (rs.next()) {
+                boolean found = false;
+                for (String liked_link : (String[])rs.getArray("liked_links").getArray()) {
+                    if (liked_link.equals(pic_link)) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                }
+                else {
+                    db.accessDB().executeUpdate("update users set liked_links = array_cat(liked_links, '{" + pic_link +"}') where login='" + login + "';");
+                    db.accessDB().executeUpdate("update posts set rating = rating + 1 where pic_link = '" + pic_link + "';");
+                }
+            }
         }
         else {
-            db.accessDB().executeUpdate("update posts set rating = rating - 1 where pic_link = '" + pic_link +"';");
+            ResultSet rs = db.accessDB().executeQuery("select disliked_links from users where login='" + login + "';");
+            if (rs.next()) {
+                boolean found = false;
+                for (String disliked_link : (String[])rs.getArray("disliked_links").getArray()) {
+                    System.out.println(disliked_link + " " + pic_link);
+                    if (disliked_link.equals(pic_link)) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                }
+                else {
+                    db.accessDB().executeUpdate("update users set disliked_links = array_cat(disliked_links, '{" + pic_link +"}') where login='" + login + "';");
+                    db.accessDB().executeUpdate("update posts set rating = rating - 1 where pic_link = '" + pic_link + "';");
+                }
+            }
         }
     }
 }

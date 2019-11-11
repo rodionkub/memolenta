@@ -4,18 +4,20 @@ import DAO.ProfileDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.io.*;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
 
 
 @WebServlet("/ProfileServlet")
+@MultipartConfig
 public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -62,5 +64,30 @@ public class ProfileServlet extends HttpServlet {
         }
         RequestDispatcher rd = req.getRequestDispatcher("/profile/profile.jsp");
         rd.include(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
+        String login = null;
+        for (Cookie ck : req.getCookies()) {
+            if (ck.getName().equals("login")) {
+                login = ck.getValue();
+            }
+        }
+
+        InputStream in = req.getPart("avatar").getInputStream();
+        FileOutputStream out = new FileOutputStream(new File("/Users/rodionkub/Downloads/apache-tomcat-8.5.47/memolenta/images/" + login + "_ava.png"));
+        byte[] buf = new byte[1024];
+        int count;
+        while ((count = in.read(buf)) >= 0) {
+            out.write(buf, 0, count);
+        }
+        in.close();
+        out.close();
+
+        resp.sendRedirect("http://localhost:8080/profile");
     }
 }

@@ -47,66 +47,13 @@
 <hr>
 <div class="container">
     <div class="row">
+        <%for (int i = 200; i < 225; i++) {%>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo3.jpg">
-                <img src="FileServlet?img=photo3.jpg" alt="...">
+            <a href="http://localhost:8080/newMeme?img=photo<%=i%>.jpg">
+                <img src="FileServlet?img=photo<%=i%>.jpg" width="300px" height="225px" alt="...">
             </a>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo4.jpg">
-                <img src="FileServlet?img=photo4.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo5.png">
-                <img src="FileServlet?img=photo5.png" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo61.jpg">
-                <img src="FileServlet?img=photo61.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo81.jpg">
-                <img src="FileServlet?img=photo81.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo101.jpg">
-                <img src="FileServlet?img=photo101.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo11.jpg">
-                <img src="FileServlet?img=photo11.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo12.jpg">
-                <img src="FileServlet?img=photo12.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo13.jpeg">
-                <img src="FileServlet?img=photo13.jpeg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo14.jpg">
-                <img src="FileServlet?img=photo14.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo15.jpg">
-                <img src="FileServlet?img=photo15.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="http://localhost:8080/newMeme?img=photo16.jpg">
-                <img src="FileServlet?img=photo16.jpg" alt="...">
-            </a>
-        </div>
+        <%}%>
     </div>
 </div>
 
